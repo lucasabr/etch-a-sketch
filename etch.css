@@ -1,0 +1,24 @@
+* {
+    background-color:rgb(39, 41, 39);
+}
+h1 {
+    text-align:center;
+    font-size:32px;
+    font-family: Impact, Charcoal, sans-serif;
+    letter-spacing:2px; 
+    color:white;
+}
+#options {
+    text-align:center;
+}
+button {
+    display:inline-block;
+    border:3px white solid; 
+    font-size:1.2em;
+    color:white;
+}
+#status {
+    font-size:15px;
+    color:white;
+    text-align:center;
+}
