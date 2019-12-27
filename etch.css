@@ -37,7 +37,8 @@ button {
     height:400px;
 	max-width: 400px;
 	max-height: 500px;
-	background: yellow;
+    background: rgb(106, 112, 106);
+    border:1px solid white;
 }
 .gridCell {
     display:inline-flex;
