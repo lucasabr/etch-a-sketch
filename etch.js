@@ -1,6 +1,7 @@
 const container = document.querySelector("#container")
 const options = document.querySelector("#options")
 const gridArea = document.createElement('div')
+const status = document.querySelector("#status")
 gridArea.className="grid";
 container.appendChild(gridArea);
 var size = 16;
@@ -53,11 +54,7 @@ if(e.target.className === "gridCell"){
     e.target.style.opacity = e.target.style.opacity + 0.1;
 }
 }
-function clear(){
-    for(i=0;i<size*size;i++){
-        gridArea.removeChild(document.querySelectorAll(".gridCell"));
-    }
-}
+
 function resize(){
     var a = prompt("Choose any number from 1-100");
     if(a>100 || a<1){
@@ -67,7 +64,7 @@ function resize(){
         alert("NaN");
     }
     else {
-        clear();
+        gridArea.innerHTML="";
         size=a;
         createGrid(size);
     }
