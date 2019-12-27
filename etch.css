@@ -22,3 +22,21 @@ button {
     color:white;
     text-align:center;
 }
+.container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#grid{
+    display: inline-block;
+    padding: 50px;
+    width:400px;
+    height:400px;
+	max-width: 400px;
+	max-height: 500px;
+	background: #E8E8E8;
+}
+.gridCell {
+    display:grid;
+    border: 1px solid black;
+}

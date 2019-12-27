@@ -1,9 +1,21 @@
-for(var i=0; i<16; i++){
-    for(var b=0; b<16; b++){
-        document.createElement("div");
-        div.setAttribute("background-color","white");
-    }
+const container = document.querySelector('.container');
+const gridArea = document.querySelector('#grid');
+
+
+//Function to initialize grid
+function createGrid(b){
+    for(i=0;i<b*b; i++){
+        let cell = document.createElement('div');
+        cell.className = "gridCell";
+        cell.style.height = (400/b) + "px";
+        cell.style.width = (400/b) + "px";
+        cell.setAttribute('style','opacity:0.3');
+        gridArea.appendChild(cell);    
 }
+    return gridArea;
+}
+createGrid(16); 
+
 
 function rainbow(){
 
@@ -22,10 +34,10 @@ function resize(){
     if(a>100 || a<1){
         alert("Choose a number from 1-100");
     }
-    else if(a === parseInt(a,10)){
-        
+    else if(isNaN(a)){
+        alert("NaN");
     }
     else {
-        alert("NaN");
+        
     }
 }
