@@ -22,21 +22,25 @@ button {
     color:white;
     text-align:center;
 }
-.container{
-    display: flex;
-    justify-content: center;
-    text-align: center;
+#master {
+    text-align:center;
 }
-#grid{
-    display: inline-block;
+#container{
+    display:inline-block;
+}
+.grid{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
     padding: 50px;
     width:400px;
     height:400px;
 	max-width: 400px;
 	max-height: 500px;
-	background: #E8E8E8;
+	background: yellow;
 }
 .gridCell {
-    display:grid;
-    border: 1px solid black;
+    display:inline-flex;
+    flex-direction:column;
+    background-color:white;
 }

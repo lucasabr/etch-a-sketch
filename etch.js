@@ -1,5 +1,8 @@
-const container = document.querySelector('.container');
-const gridArea = document.querySelector('#grid');
+const container = document.querySelector("#container");
+const gridArea = document.createElement('div');
+gridArea.className="grid";
+container.appendChild(gridArea);
+var size = 16;
 
 
 //Function to initialize grid
@@ -9,12 +12,11 @@ function createGrid(b){
         cell.className = "gridCell";
         cell.style.height = (400/b) + "px";
         cell.style.width = (400/b) + "px";
-        cell.setAttribute('style','opacity:0.3');
         gridArea.appendChild(cell);    
 }
     return gridArea;
 }
-createGrid(16); 
+createGrid(size); 
 
 
 function rainbow(){
