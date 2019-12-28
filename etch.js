@@ -6,6 +6,9 @@ gridArea.className="grid";
 container.appendChild(gridArea);
 var size = 16;
 var cells;
+var sizeStatus = "16 x 16 grid!";
+var settingStatus = " On Black Mode!";
+status.innerHTML = sizeStatus + settingStatus;  
 //Function to initialize grid
 function createGrid(b){
     for(i=0;i<b*b; i++){
@@ -27,22 +30,33 @@ options.addEventListener("click", function(e){
     if(e.target.id == "black"){
         gridArea.removeEventListener("mouseover", darken);
         gridArea.removeEventListener("mouseover", rainbow);
-        gridArea.addEventListener("mouseover", black);       
+        gridArea.addEventListener("mouseover", black); 
+        settingStatus = " On Black Mode!"; 
     }
     else if(e.target.id == "darken"){
         gridArea.removeEventListener("mouseover", black);
         gridArea.removeEventListener("mouseover", rainbow);
         gridArea.addEventListener("mouseover", darken);
+        settingStatus = " On Darken Mode!"; 
     }
     else if(e.target.id == "rainbow"){
         gridArea.removeEventListener("mouseover", darken);
         gridArea.removeEventListener("mouseover", black);
         gridArea.addEventListener("mouseover", rainbow);
+        settingStatus = " On Rainbow Mode!"; 
     }
+    status.innerHTML = sizeStatus + settingStatus;
 })
 
-function rainbow(){
+function rainbow(e){
+if(e.target.className === "gridCell"){
+    e.target.style.background = randomColor();
 
+}
+}
+function randomColor(){
+    return 'rgb('+ Math.floor(Math.random()*255) + ',' + Math.floor(Math.random()*255) + ',' + Math.floor(Math.random()*255) + ')';
+    
 }
 function black(e){
 if(e.target.className === "gridCell"){
@@ -51,7 +65,10 @@ if(e.target.className === "gridCell"){
 }
 function darken(e){
 if(e.target.className === "gridCell"){
-    e.target.style.opacity = e.target.style.opacity + 0.1;
+    e.target.style.background = "black";
+    let o = e.target.style.opacity;
+    e.target.style.opacity = (Number(o) + 0.1);
+    
 }
 }
 
@@ -67,5 +84,7 @@ function resize(){
         gridArea.innerHTML="";
         size=a;
         createGrid(size);
+        sizeStatus = size + " x " + size + " grid!";
+        status.innerHTML = sizeStatus + settingStatus;
     }
 }
